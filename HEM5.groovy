@@ -204,8 +204,7 @@ private createChildDevices() {
 	}
 }
 
-private com.hubitat.app.ChildDeviceWrapper getChild(Integer childNum) {	WTF is this???
-//private getChild(Integer childNum) {
+private com.hubitat.app.ChildDeviceWrapper getChild(Integer childNum) {	
 	return childDevices.find({ it.deviceNetworkId == "${device.deviceNetworkId}-c${childNum}" })
 }
 
