@@ -204,8 +204,8 @@ private createChildDevices() {
 	}
 }
 
-//private hubitat.app.ChildDeviceWrapper getChild(Integer childNum) {	WTF is this???
-private getChild(Integer childNum) {
+private com.hubitat.app.ChildDeviceWrapper getChild(Integer childNum) {	WTF is this???
+//private getChild(Integer childNum) {
 	return childDevices.find({ it.deviceNetworkId == "${device.deviceNetworkId}-c${childNum}" })
 }
 
@@ -440,20 +440,20 @@ private encap(Map encapMap) {
 //	delayBetween(cmds.collect{ encap(it) }, delay)
 //}
 
-private encapSequence(map) {
-	delayBetween(map.cmds.collect{ encap(it) })
-}
-
 //private encapSequence(cmds, Integer delay, Integer ep) {
 //	delayBetween(cmds.collect{ encap(it, ep) }, delay)
 //
 //}
 
-private encapSequence(map)
-	{
-	delayBetween(map.cmds.collect{ encap(it, map.ep) })
-
+private encapSequence(map) {
+	delayBetween(map.cmds.collect{ encap(it) })
 }
+
+//private encapSequence(map)
+//	{
+//	delayBetween(map.cmds.collect{ encap(it, map.ep) })
+//
+//}
 
 
 private List intToParam(Long value, Integer size = 1) {
